@@ -42,7 +42,7 @@ def load_env():
     load_dotenv()
 
 
-@pytest.fixture(scope="function", autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def setup_browser(request):
     browser_version = request.config.getoption('--browser_version')
     run_mode = request.config.getoption('--run_mode')
