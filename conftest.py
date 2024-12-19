@@ -10,6 +10,7 @@ from utils import attach
 DEFAULT_BROWSER_VERSION = '125.0'
 DEFAULT_SELENOID_URL = 'selenoid.autotests.cloud/wd/hub'
 
+
 def pytest_addoption(parser):
 
     parser.addoption(
@@ -42,7 +43,7 @@ def load_env():
     load_dotenv()
 
 
-@pytest.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 def setup_browser(request):
     browser_version = request.config.getoption('--browser_version')
     run_mode = request.config.getoption('--run_mode')
@@ -86,6 +87,7 @@ def setup_browser(request):
             options.page_load_strategy = 'eager'
             driver = webdriver.Firefox(options=options)
 
+    browser.config.timeout = 10
     browser.config.driver = driver
     browser.config.window_height = 1080
     browser.config.window_width = 1920
