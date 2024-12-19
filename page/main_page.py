@@ -1,5 +1,5 @@
 import allure
-from selene import browser, have, query, be
+from selene import browser, have
 
 
 class MainPage:
@@ -22,7 +22,7 @@ class MainPage:
 
     def open_page(self):
         with allure.step("Открыть браузер"):
-            browser.open('/').with_(timeout=10)
+            browser.open('/')
             return self
 
     @staticmethod
@@ -31,7 +31,7 @@ class MainPage:
             browser.element('.search-form__input ').type(value).press_enter()
 
         with allure.step(f"Проверка корректного поиска по значению {value}"):
-            browser.element('.course-card__title').with_(timeout=10).should(have.text(value))
+            browser.element('.course-card__title').should(have.text(value))
 
 
     @staticmethod
@@ -41,7 +41,7 @@ class MainPage:
 
         with allure.step("Проверка отображения системной ошибки при неуспешном поиске"):
             browser.element('.catalog__search-results-message').\
-                with_(timeout=10).should(have.text(f'По запросу «{value}» ничего не найдено.'))
+                should(have.text(f'По запросу «{value}» ничего не найдено.'))
 
 
 main_page = MainPage()
