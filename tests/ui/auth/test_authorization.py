@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 
 from page.auth_page import auth_page
 
-load_dotenv()
 
 
 @allure.label("owner", "aa.eliseev")
