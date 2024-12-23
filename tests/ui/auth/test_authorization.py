@@ -29,6 +29,7 @@ def test_auth_success(setup_browser):
 @allure.tag("Smoke")
 @allure.title('Авторизация с невалидными данными')
 def test_auth_failure(setup_browser, login, password):
+    load_dotenv()
     auth_page.open_page()
     auth_page.click_menu_login()
     auth_page.auth_failure(login, password)
