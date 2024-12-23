@@ -24,4 +24,4 @@ def test_auth_success(setup_browser):
 def test_auth_failure(setup_browser):
     auth_page.open_page()
     auth_page.click_menu_login()
-    auth_page.auth_failure("login", "password")
+    auth_page.auth_failure("login@test.com", "password")
