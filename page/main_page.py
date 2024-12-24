@@ -33,7 +33,6 @@ class MainPage:
         with allure.step(f"Проверка корректного поиска по значению {value}"):
             browser.element('.course-card__title').should(have.text(value))
 
-
     @staticmethod
     def search_failure(value):
         with allure.step(f"Поиск по значению {value}"):
