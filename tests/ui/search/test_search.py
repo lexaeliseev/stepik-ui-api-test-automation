@@ -1,11 +1,11 @@
 import allure
 import pytest
-
 from page.main_page import main_page
 
 
 @allure.label("owner", "aa.eliseev")
 @allure.feature('Поиск')
+@allure.severity(allure.severity_level.CRITICAL)
 @allure.epic('UI')
 @allure.tag("Smoke")
 @pytest.mark.parametrize('value',
@@ -20,6 +20,7 @@ def test_search_success(setup_browser, value):
 
 @allure.label("owner", "aa.eliseev")
 @allure.feature('Поиск')
+@allure.severity(allure.severity_level.CRITICAL)
 @allure.epic('UI')
 @allure.tag("Smoke")
 @pytest.mark.parametrize('value',

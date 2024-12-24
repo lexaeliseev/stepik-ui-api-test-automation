@@ -6,6 +6,7 @@ from page.auth_page import auth_page
 @allure.label("owner", "aa.eliseev")
 @allure.epic('UI')
 @allure.feature('Авторизация')
+@allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Успешная авторизация в системе')
 def test_auth_success(setup_browser):
@@ -21,6 +22,7 @@ def test_auth_success(setup_browser):
 @allure.label("owner", "aa.eliseev")
 @allure.epic('UI')
 @allure.feature('Авторизация')
+@allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Выход авторизованного пользователя из системы')
 def test_auth_logout(setup_browser):
@@ -42,6 +44,7 @@ def test_auth_logout(setup_browser):
 @allure.label("owner", "aa.eliseev")
 @allure.epic('UI')
 @allure.feature('Авторизация')
+@allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Авторизация с невалидными данными')
 def test_auth_failure(setup_browser):
