@@ -6,6 +6,7 @@ from page.main_page import main_page
 
 @allure.label("owner", "aa.eliseev")
 @allure.feature('Поиск')
+@allure.epic('UI')
 @allure.tag("Smoke")
 @pytest.mark.parametrize('value',
                          [item[0] for item in main_page.get_search_item_success()],
@@ -19,6 +20,7 @@ def test_search_success(setup_browser, value):
 
 @allure.label("owner", "aa.eliseev")
 @allure.feature('Поиск')
+@allure.epic('UI')
 @allure.tag("Smoke")
 @pytest.mark.parametrize('value',
                          [item[0] for item in main_page.get_search_item_failure()],
