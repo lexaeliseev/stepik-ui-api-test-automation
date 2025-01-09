@@ -19,6 +19,6 @@ def test_filters_with_certificates(setup_browser):
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.epic('UI')
 @allure.tag("Smoke")
-def test_filters_with_certificates(setup_browser):
+def test_filters_with_discount(setup_browser):
     main_page.open_page()
     main_page.filter_discount()
