@@ -1,8 +1,17 @@
+import time
+
 import allure
-from selene import browser, have
+from selene import browser, have, be
 
 
 class MainPage:
+
+    def open_page(self):
+        with allure.step("Открыть браузер"):
+            browser.open('/')
+            return self
+
+    """ ПОИСК """
 
     @staticmethod
     def get_search_item_success():
@@ -20,11 +29,6 @@ class MainPage:
                 ('нененнеос', 'nenenneos')
             ]
 
-    def open_page(self):
-        with allure.step("Открыть браузер"):
-            browser.open('/')
-            return self
-
     @staticmethod
     def search_success(value):
         with allure.step(f"Поиск по значению {value}"):
@@ -41,6 +45,29 @@ class MainPage:
         with allure.step("Проверка отображения системной ошибки при неуспешном поиске"):
             browser.element('.catalog__search-results-message').\
                 should(have.text(f'По запросу «{value}» ничего не найдено.'))
+
+        """ ФИЛЬТРАЦИЯ """
+
+    @staticmethod
+    def filter_certificates():
+        with allure.step('Клик по кнопке Искать'):
+            browser.element('.search-form__submit').click()
+        with allure.step('Выбрать toogle "Только с cертификатом"'):
+            browser.element('[data-name="certificate"]').element('.ui-toggler').click()
+        with allure.step('Проверка отображения лейбла "Только с cертификатом"'):
+            browser.element('[data-type="certificate"]').should(be.visible)
+
+    @staticmethod
+    def filter_discount():
+        with allure.step('Клик по кнопке Искать'):
+            browser.element('.search-form__submit').click()
+        with allure.step('Выбрать toogle "Только со скидкой"'):
+            browser.element('[data-name="discount"]').element('.ui-toggler').click()
+        with allure.step('Проверка отображения курса со скидкой'):
+            browser.element('.display-price__price_discount').should(be.visible)
+
+
+
 
 
 main_page = MainPage()
