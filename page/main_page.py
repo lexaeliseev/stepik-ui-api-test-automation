@@ -1,5 +1,3 @@
-import time
-
 import allure
 from selene import browser, have, be
 
@@ -65,9 +63,5 @@ class MainPage:
             browser.element('[data-name="discount"]').element('.ui-toggler').click()
         with allure.step('Проверка отображения курса со скидкой'):
             browser.element('.display-price__price_discount').should(be.visible)
-
-
-
-
 
 main_page = MainPage()
