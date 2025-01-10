@@ -87,11 +87,7 @@ def setup_browser(request):
             options.page_load_strategy = 'eager'
             driver = webdriver.Firefox(options=options)
 
-    browser.config.timeout = 10
     browser.config.driver = driver
-    browser.config.window_height = 1080
-    browser.config.window_width = 1920
-    browser.config.base_url = os.getenv('URL')
 
     yield
 
