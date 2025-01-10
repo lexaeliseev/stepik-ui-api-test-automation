@@ -1,5 +1,5 @@
 import allure
-from page.main_page import main_page
+from framework_ui.page.main_page import main_page
 
 
 @allure.label("owner", "aa.eliseev")

@@ -16,12 +16,12 @@ class AuthPage:
             browser.element('.navbar__auth_login').click()
 
     @staticmethod
-    def fill_login(login):
+    def fill_login(login: str):
         with allure.step(f"Ввести {login} в форму авторизации"):
             browser.element('#id_login_email').should(be.blank).type(login)
 
     @staticmethod
-    def fill_password(password):
+    def fill_password(password: str):
         with allure.step(f"Ввести {password} в форму авторизации"):
             browser.element('#id_login_password').should(be.blank).type(password)
 
@@ -47,13 +47,8 @@ class AuthPage:
             browser.element('//button[text()="OK"]').click()
             browser.element('[data-tab-name="login"]').should(be.visible)
 
-
-
-
-
-
     @staticmethod
-    def auth_logout(login, password):
+    def auth_logout(login: str, password: str):
         with allure.step(f"Ввести {login}"):
             browser.element('#id_login_email').should(be.blank).type(login)
         with allure.step(f"Ввести {password}"):
@@ -66,7 +61,6 @@ class AuthPage:
             browser.all('.modal-popup__footer').element_by(have.text('OK')).click()
         with allure.step('Проверка успешного выхода из личного кабинета'):
             browser.element('[data-tab-name="login"]').should(be.visible)
-
 
     @staticmethod
     def check_auth_failure():

@@ -28,7 +28,7 @@ class MainPage:
             ]
 
     @staticmethod
-    def search_success(value):
+    def search_success(value: str):
         with allure.step(f"Поиск по значению {value}"):
             browser.element('.search-form__input ').type(value).press_enter()
 
@@ -36,7 +36,7 @@ class MainPage:
             browser.element('.course-card__title').should(have.text(value))
 
     @staticmethod
-    def search_failure(value):
+    def search_failure(value: str):
         with allure.step(f"Поиск по значению {value}"):
             browser.element('.search-form__input ').type(value).press_enter()
 
