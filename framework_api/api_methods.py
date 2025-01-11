@@ -24,7 +24,6 @@ class StepikApi:
 
             response_logging(response)
             response_attaching(response)
-
             return json.loads(response.text)['access_token']
 
     def auth_oauth2(self, client_id: str, client_secret: str):
@@ -40,23 +39,47 @@ class StepikApi:
 
     def logout(self):
         with allure.step('Выход из системы'):
-            return requests.post(f'{self.stepik_url}/api/users/logout')
+            response = requests.post(f'{self.stepik_url}/api/users/logout')
+
+            response_logging(response)
+            response_attaching(response)
+
+            return response
 
     def get_course_list(self, pagination_list_number: int):
         with allure.step(f'Получение списка курсов на странице {pagination_list_number}'):
-            return requests.get(f'{self.stepik_url}/api/course-lists/{pagination_list_number}')
+            response = requests.get(f'{self.stepik_url}/api/course-lists/{pagination_list_number}')
+
+            response_logging(response)
+            response_attaching(response)
+
+            return response
 
     def get_course_name(self, value: int) -> str:
         with allure.step(f'Получение названия курса {value}'):
             course_info = requests.get(f'{self.stepik_url}/api/courses/{value}')
+
+            response_logging(course_info)
+            response_attaching(course_info)
+
             return course_info.json()['courses'][0]['title']
 
     def get_profile_info(self, profile_id: int):
-        return requests.get(f'{self.stepik_url}/api/users/{profile_id}')
+        response = requests.get(f'{self.stepik_url}/api/users/{profile_id}')
+
+        response_logging(response)
+        response_attaching(response)
+
+        return response
 
     def update_profile_info(self, profile_id: int, data: dict):
-        return requests.put(f'{self.stepik_url}/api/profiles/{profile_id}',
+        response = requests.put(f'{self.stepik_url}/api/profiles/{profile_id}',
                             headers={'Authorization': 'Bearer ' + self.get_token()}, json=data)
+
+        response_logging(response)
+        response_attaching(response)
+
+        return response
 
 
 stepik_api = StepikApi()
