@@ -16,6 +16,7 @@ client_secret = os.getenv('CLIENT_SECRET')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Проверка корректной пагинации')
+@allure.label('API')
 def test_auth_success():
     course_list_number = 355
     result = stepik_api.get_course_list(course_list_number)
@@ -34,6 +35,7 @@ def test_auth_success():
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Проверка отображения ошибки при переходе на несуществующую страницу')
+@allure.label('API')
 def test_auth_success():
     course_list_number = 355000
     result = stepik_api.get_course_list(course_list_number)
