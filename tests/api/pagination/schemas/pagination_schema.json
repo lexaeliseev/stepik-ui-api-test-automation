@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "meta": {
+            "type": "object",
+            "properties": {
+                "page": {
+                    "type": "integer"
+                },
+                "has_next": {
+                    "type": "boolean"
+                },
+                "has_previous": {
+                    "type": "boolean"
+                }
+            },
+            "required": ["page", "has_next", "has_previous"]
+        },
+        "course-lists": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "position": {
+                        "type": "integer"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "title_en": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "language": {
+                        "type": "string"
+                    },
+                    "platform": {
+                        "type": "integer"
+                    },
+                    "social_image_url": {
+                        "type": "string"
+                    },
+                    "courses": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "similar_authors": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "similar_course_lists": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "similar_specializations": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    }
+                },
+                "required": [
+                    "id",
+                    "position",
+                    "title",
+                    "title_en",
+                    "description",
+                    "language",
+                    "platform",
+                    "social_image_url",
+                    "courses",
+                    "similar_authors",
+                    "similar_course_lists",
+                    "similar_specializations"
+                ]
+            }
+        }
+    },
+    "required": ["meta", "course-lists"]
+}

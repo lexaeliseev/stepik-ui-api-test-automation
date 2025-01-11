@@ -1,9 +1,12 @@
 import json
 import os
 
+import allure
 import requests
 from dotenv import load_dotenv
 from requests.auth import HTTPBasicAuth
+
+from utils.utils import response_logging, response_attaching
 
 load_dotenv()
 stepik_url = os.getenv('URL')
@@ -16,28 +19,37 @@ class StepikApi:
         self.stepik_url = stepik_url
 
     def get_token(self):
-        response = self.auth_oauth2_and_get_token(client_id, client_secret)
-        return json.loads(response.text)['access_token']
+        with allure.step('Получение токена доступа'):
+            response = self.auth_oauth2(client_id, client_secret)
 
-    def auth_oauth2_and_get_token(self, client_id: str, client_secret: str):
-        auth = HTTPBasicAuth(client_id, client_secret)
-        response = requests.post(f'{self.stepik_url}/oauth2/token/',
-                                 data={'grant_type': 'client_credentials'},
-                                 auth=auth,
-                                 allow_redirects=False)
+            response_logging(response)
+            response_attaching(response)
 
-        print(response.status_code)
+            return json.loads(response.text)['access_token']
+
+    def auth_oauth2(self, client_id: str, client_secret: str):
+        with allure.step('Проверка авторизации в системе'):
+            auth = HTTPBasicAuth(client_id, client_secret)
+            response = requests.post(f'{self.stepik_url}/oauth2/token/',
+                                     data={'grant_type': 'client_credentials'},
+                                     auth=auth,
+                                     allow_redirects=False)
+        response_logging(response)
+        response_attaching(response)
         return response
 
     def logout(self):
-        return requests.post(f'{self.stepik_url}/api/users/logout')
+        with allure.step('Выход из системы'):
+            return requests.post(f'{self.stepik_url}/api/users/logout')
 
     def get_course_list(self, pagination_list_number: int):
-        return requests.get(f'{self.stepik_url}/api/course-lists/{pagination_list_number}')
+        with allure.step(f'Получение списка курсов на странице {pagination_list_number}'):
+            return requests.get(f'{self.stepik_url}/api/course-lists/{pagination_list_number}')
 
     def get_course_name(self, value: int) -> str:
-        course_info = requests.get(f'{self.stepik_url}/api/courses/{value}')
-        return course_info.json()['courses'][0]['title']
+        with allure.step(f'Получение названия курса {value}'):
+            course_info = requests.get(f'{self.stepik_url}/api/courses/{value}')
+            return course_info.json()['courses'][0]['title']
 
     def get_profile_info(self, profile_id: int):
         return requests.get(f'{self.stepik_url}/api/users/{profile_id}')
@@ -48,4 +60,3 @@ class StepikApi:
 
 
 stepik_api = StepikApi()
-
