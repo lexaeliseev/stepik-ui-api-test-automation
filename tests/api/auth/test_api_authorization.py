@@ -1,7 +1,7 @@
 import os
 import allure
 
-from framework_api import helper
+from utils import helper
 from framework_api.api_methods import stepik_api
 from resourses import CURRENT_DIR
 
