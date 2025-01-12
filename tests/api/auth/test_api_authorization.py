@@ -9,13 +9,12 @@ client_id = os.getenv('CLIENT_ID')
 client_secret = os.getenv('CLIENT_SECRET')
 
 
-@allure.epic('API')
+@allure.label("owner", "aa.eliseev")
 @allure.feature('Авторизация')
-@allure.story('TEST')
-@allure.title('Авторизация в системе с валидными данными')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
-@allure.label("owner", "aa.eliseev")
+@allure.title('Успешная авторизация в системе')
+@allure.story('API')
 def test_auth_success():
     result = stepik_api.auth_oauth2(client_id, client_secret)
     assert result.status_code == 200
@@ -24,14 +23,12 @@ def test_auth_success():
     helper.validate_json_schema(f'{CURRENT_DIR}/tests/api/auth/schemas/auth_success_schema.json', result_json)
 
 
-
 @allure.label("owner", "aa.eliseev")
-@allure.epic('API')
 @allure.feature('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
-@allure.title('Авторизация в системе с невалидными данными')
-@allure.story('TEST')
+@allure.title('Вход в систему с неверными данными')
+@allure.story('API')
 def test_auth_failure():
     result = stepik_api.auth_oauth2(client_id, 'bad_client_secret')
     assert result.status_code == 401
@@ -42,16 +39,12 @@ def test_auth_failure():
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.epic('API')
 @allure.feature('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
-@allure.title('Авторизация в системе с валидными данными')
-@allure.story('TEST')
-def test_auth_logout():
-    response = stepik_api.auth_oauth2(client_id, client_secret)
-    assert response.status_code == 200
-
+@allure.title('Выход пользователя из системы')
+@allure.story('API')
+def test_auth_logout(auth_fixture):
     response = stepik_api.logout()
     assert response.status_code == 401
 
