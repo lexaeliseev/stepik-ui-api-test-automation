@@ -6,8 +6,8 @@ from framework_ui.page.main_page import main_page
 @allure.label("owner", "aa.eliseev")
 @allure.feature('Поиск')
 @allure.severity(allure.severity_level.CRITICAL)
-@allure.epic('UI')
 @allure.tag("Smoke")
+@allure.story('UI')
 @pytest.mark.parametrize('value',
                          [item[0] for item in main_page.get_search_item_success()],
                          ids=[item[1] for item in main_page.get_search_item_success()]
@@ -21,8 +21,8 @@ def test_search_success(setup_browser, value):
 @allure.label("owner", "aa.eliseev")
 @allure.feature('Поиск')
 @allure.severity(allure.severity_level.CRITICAL)
-@allure.epic('UI')
 @allure.tag("Smoke")
+@allure.story('UI')
 @pytest.mark.parametrize('value',
                          [item[0] for item in main_page.get_search_item_failure()],
                          ids=[item[1] for item in main_page.get_search_item_failure()]

@@ -4,11 +4,11 @@ from framework_ui.page.auth_page import auth_page
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.epic('UI')
 @allure.feature('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Успешная авторизация в системе и выход из системы')
+@allure.story('UI')
 def test_auth_and_logout_success(setup_browser):
     auth_page.open_page()
     auth_page.click_menu_login()
@@ -22,11 +22,11 @@ def test_auth_and_logout_success(setup_browser):
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.epic('UI')
 @allure.feature('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Авторизация с невалидными данными')
+@allure.story('UI')
 def test_auth_failure(setup_browser):
     auth_page.open_page()
     auth_page.click_menu_login()
