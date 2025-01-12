@@ -11,7 +11,7 @@ client_secret = os.getenv('CLIENT_SECRET')
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('API')
+@allure.feature('AUTO API')
 @allure.story('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
