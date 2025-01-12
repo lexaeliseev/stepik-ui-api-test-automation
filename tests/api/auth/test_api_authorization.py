@@ -31,11 +31,15 @@ def test_auth_success():
 @allure.story('API')
 def test_auth_failure():
     result = stepik_api.auth_oauth2(client_id, 'bad_client_secret')
-    assert result.status_code == 401
+
+    with allure.step('Проверка ответа на статус-код'):
+        assert result.status_code == 401
 
     result_json = result.json()
     helper.validate_json_schema(f'{CURRENT_DIR}/tests/api/auth/schemas/auth_failure_schema.json', result_json)
-    assert result_json.get('error') == 'invalid_client'
+
+    with allure.step('Проверка текста ответа'):
+        assert result_json.get('error') == 'invalid_client'
 
 
 @allure.label("owner", "aa.eliseev")

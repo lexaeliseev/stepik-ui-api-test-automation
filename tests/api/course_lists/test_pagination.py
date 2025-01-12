@@ -19,13 +19,16 @@ client_secret = os.getenv('CLIENT_SECRET')
 def test_get_course_list_success():
     course_list_number = 355
     result = stepik_api.get_course_list(course_list_number)
-    assert result.status_code == 200
+
+    with allure.step('Проверка ответа на статус-код'):
+        assert result.status_code == 200
 
     result_json = result.json()
     helper.validate_json_schema(f'{CURRENT_DIR}/tests/api/course_lists/schemas/pagination_success_schema.json',
                                 result_json)
-    assert result_json['course-lists'][0]['id'] == course_list_number
-    assert result_json['course-lists'][0]['title'] == 'Программирование для детей'
+    with allure.step('Проверка корректного перехода на страницу курса'):
+        assert result_json['course-lists'][0]['id'] == course_list_number
+        assert result_json['course-lists'][0]['title'] == 'Программирование для детей'
 
 
 @allure.label("owner", "aa.eliseev")
@@ -38,9 +41,13 @@ def test_get_course_list_not_found():
     course_list_number = 355000
 
     result = stepik_api.get_course_list(course_list_number)
-    assert result.status_code == 404
+
+    with allure.step('Проверка ответа на статус-код'):
+        assert result.status_code == 404
 
     result_json = result.json()
     helper.validate_json_schema(f'{CURRENT_DIR}/tests/api/course_lists/schemas/pagination_not_found_schema.json',
                                 result_json)
-    assert result_json.get('detail') == 'Not found'
+
+    with allure.step('Проверка текста ответа'):
+        assert result_json.get('detail') == 'Not found'
