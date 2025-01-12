@@ -26,6 +26,7 @@ def test_auth_and_logout_success(setup_browser):
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Авторизация с невалидными данными')
+@allure.story('AUTO')
 @allure.story('UI')
 def test_auth_failure(setup_browser):
     auth_page.open_page()
