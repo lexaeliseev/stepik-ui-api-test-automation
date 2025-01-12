@@ -4,7 +4,7 @@ from framework_ui.page.main_page import main_page
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('UI')
+@allure.feature('AUTO UI')
 @allure.story('Фильтрация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
@@ -16,7 +16,7 @@ def test_filters_with_certificates(setup_browser):
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('UI')
+@allure.feature('AUTO UI')
 @allure.story('Фильтрация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")

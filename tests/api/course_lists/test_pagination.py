@@ -12,7 +12,7 @@ client_secret = os.getenv('CLIENT_SECRET')
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('API')
+@allure.feature('AUTO API')
 @allure.story('Пагинация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
@@ -34,7 +34,7 @@ def test_get_course_list_success():
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('API')
+@allure.feature('AUTO API')
 @allure.story('Пагинация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")

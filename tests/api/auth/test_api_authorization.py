@@ -26,7 +26,7 @@ def test_auth_success():
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('API')
+@allure.feature('AUTO API')
 @allure.story('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
@@ -46,7 +46,7 @@ def test_auth_failure():
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('API')
+@allure.feature('AUTO API')
 @allure.story('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")

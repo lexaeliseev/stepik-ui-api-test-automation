@@ -9,7 +9,7 @@ from tests.api.data.user_data import user_data
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('API')
+@allure.feature('AUTO API')
 @allure.story('Профиль пользователя')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")

@@ -7,7 +7,7 @@ from resourses import CURRENT_DIR
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('API')
+@allure.feature('AUTO API')
 @allure.story('Профиль пользователя')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
@@ -30,7 +30,7 @@ def test_get_profile_info_success(reset_profile):
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('API')
+@allure.feature('AUTO API')
 @allure.story('Профиль пользователя')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")

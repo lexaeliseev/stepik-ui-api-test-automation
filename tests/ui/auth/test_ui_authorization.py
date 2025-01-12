@@ -5,7 +5,7 @@ from framework_ui.page.auth_page import auth_page
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('UI')
+@allure.feature('AUTO UI')
 @allure.story('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
@@ -24,7 +24,7 @@ def test_auth_and_logout_success(setup_browser):
 
 @allure.label("owner", "aa.eliseev")
 @allure.epic('AUTO')
-@allure.feature('UI')
+@allure.feature('AUTO UI')
 @allure.story('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
