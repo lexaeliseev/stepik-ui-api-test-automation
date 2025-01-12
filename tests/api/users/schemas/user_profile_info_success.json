@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "type": "integer"
+        },
+        "has_next": {
+          "type": "boolean"
+        },
+        "has_previous": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "page",
+        "has_next",
+        "has_previous"
+      ]
+    },
+    "users": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "profile": {
+              "type": "integer"
+            },
+            "is_private": {
+              "type": "boolean"
+            },
+            "is_active": {
+              "type": "boolean"
+            },
+            "is_guest": {
+              "type": "boolean"
+            },
+            "is_organization": {
+              "type": "boolean"
+            },
+            "is_author": {
+              "type": "boolean"
+            },
+            "short_bio": {
+              "type": "string"
+            },
+            "details": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "full_name": {
+              "type": "string"
+            },
+            "alias": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "string"
+            },
+            "cover": {
+              "type": "null"
+            },
+            "city": {
+              "type": "null"
+            },
+            "knowledge": {
+              "type": "integer"
+            },
+            "knowledge_rank": {
+              "type": "null"
+            },
+            "reputation": {
+              "type": "integer"
+            },
+            "reputation_rank": {
+              "type": "null"
+            },
+            "join_date": {
+              "type": "string"
+            },
+            "social_profiles": {
+              "type": "array",
+              "items": {}
+            },
+            "solved_steps_count": {
+              "type": "integer"
+            },
+            "created_courses_count": {
+              "type": "integer"
+            },
+            "created_lessons_count": {
+              "type": "integer"
+            },
+            "issued_certificates_count": {
+              "type": "integer"
+            },
+            "followers_count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "profile",
+            "is_private",
+            "is_active",
+            "is_guest",
+            "is_organization",
+            "is_author",
+            "short_bio",
+            "details",
+            "first_name",
+            "last_name",
+            "full_name",
+            "alias",
+            "avatar",
+            "cover",
+            "city",
+            "knowledge",
+            "knowledge_rank",
+            "reputation",
+            "reputation_rank",
+            "join_date",
+            "social_profiles",
+            "solved_steps_count",
+            "created_courses_count",
+            "created_lessons_count",
+            "issued_certificates_count",
+            "followers_count"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "meta",
+    "users"
+  ]
+}
