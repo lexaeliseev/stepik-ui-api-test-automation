@@ -70,8 +70,8 @@ class StepikApi:
             response = requests.put(f'{self.stepik_url}/api/profiles/{profile_id}',
                                 headers={'Authorization': 'Bearer ' + self.get_token()}, json=data)
 
-            # response_logging(response)
-            # response_attaching(response)
+            response_logging(response)
+            response_attaching(response)
 
             return response
 
