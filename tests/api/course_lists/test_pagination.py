@@ -11,11 +11,12 @@ client_secret = os.getenv('CLIENT_SECRET')
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.feature('Пагинация')
+@allure.epic('AUTO')
+@allure.feature('API')
+@allure.story('Пагинация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Проверка успешного получения списка курсов')
-@allure.story('API')
 def test_get_course_list_success():
     course_list_number = 355
     result = stepik_api.get_course_list(course_list_number)
@@ -32,11 +33,12 @@ def test_get_course_list_success():
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.feature('Пагинация')
+@allure.epic('AUTO')
+@allure.feature('API')
+@allure.story('Пагинация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Проверка ответа при запросе несуществующего списка курсов')
-@allure.story('API')
 def test_get_course_list_not_found():
     course_list_number = 355000
 

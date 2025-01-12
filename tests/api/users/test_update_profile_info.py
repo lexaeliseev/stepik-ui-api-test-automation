@@ -8,11 +8,12 @@ from tests.api.data.user_data import user_data
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.feature('Профиль пользователя')
+@allure.epic('AUTO')
+@allure.feature('API')
+@allure.story('Профиль пользователя')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Обновление информации профиля пользователя')
-@allure.story('API')
 def test_update_profile_info_success(reset_profile):
     profile_id = 1002719529
     first_name = 'Update'

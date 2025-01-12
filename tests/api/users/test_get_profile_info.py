@@ -6,11 +6,12 @@ from resourses import CURRENT_DIR
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.feature('Профиль пользователя')
+@allure.epic('AUTO')
+@allure.feature('API')
+@allure.story('Профиль пользователя')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Проверка получения информации о профиле пользователя')
-@allure.story('API')
 def test_get_profile_info_success(reset_profile):
     profile_id = 1002719529
 
@@ -28,11 +29,12 @@ def test_get_profile_info_success(reset_profile):
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.feature('Профиль пользователя')
+@allure.epic('AUTO')
+@allure.feature('API')
+@allure.story('Профиль пользователя')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Проверка получения информации о несуществующем профиле пользователя')
-@allure.story('API')
 def test_get_profile_info_not_found(reset_profile):
     profile_id = 'not_found'
 

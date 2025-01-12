@@ -10,11 +10,12 @@ client_secret = os.getenv('CLIENT_SECRET')
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.feature('Авторизация')
+@allure.epic('AUTO')
+@allure.feature('API')
+@allure.story('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Успешная авторизация в системе')
-@allure.story('API')
 def test_auth_success():
     result = stepik_api.auth_oauth2(client_id, client_secret)
     assert result.status_code == 200
@@ -24,11 +25,12 @@ def test_auth_success():
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.feature('Авторизация')
+@allure.epic('AUTO')
+@allure.feature('API')
+@allure.story('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Вход в систему с неверными данными')
-@allure.story('API')
 def test_auth_failure():
     result = stepik_api.auth_oauth2(client_id, 'bad_client_secret')
 
@@ -43,11 +45,12 @@ def test_auth_failure():
 
 
 @allure.label("owner", "aa.eliseev")
-@allure.feature('Авторизация')
+@allure.epic('AUTO')
+@allure.feature('API')
+@allure.story('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
 @allure.title('Выход пользователя из системы')
-@allure.story('API')
 def test_auth_logout(auth_fixture):
     response = stepik_api.logout()
     assert response.status_code == 401
