@@ -11,7 +11,7 @@ from resourses import CURRENT_DIR
 @allure.tag("Smoke")
 @allure.title('Проверка получения информации о профиле пользователя')
 @allure.story('API')
-def test_get_profile_info_success():
+def test_get_profile_info_success(reset_profile):
     profile_id = 1002719529
 
     response = stepik_api.get_profile_info(profile_id)
@@ -29,7 +29,7 @@ def test_get_profile_info_success():
 @allure.tag("Smoke")
 @allure.title('Проверка получения информации о несуществующем профиле пользователя')
 @allure.story('API')
-def test_get_profile_info_not_found():
+def test_get_profile_info_not_found(reset_profile):
     profile_id = 'not_found'
 
     response = stepik_api.get_profile_info(profile_id)
