@@ -55,31 +55,25 @@ class StepikApi:
 
             return response
 
-    def get_course_name(self, value: int) -> str:
-        with allure.step(f'Получение названия курса {value}'):
-            course_info = requests.get(f'{self.stepik_url}/api/courses/{value}')
-
-            response_logging(course_info)
-            response_attaching(course_info)
-
-            return course_info.json()['courses'][0]['title']
-
     def get_profile_info(self, profile_id: int):
-        response = requests.get(f'{self.stepik_url}/api/users/{profile_id}')
+        with allure.step(f'Получение информации о пользователе {profile_id}'):
 
-        response_logging(response)
-        response_attaching(response)
+            response = requests.get(f'{self.stepik_url}/api/users/{profile_id}')
+
+            response_logging(response)
+            response_attaching(response)
 
         return response
 
     def update_profile_info(self, profile_id: int, data: dict):
-        response = requests.put(f'{self.stepik_url}/api/profiles/{profile_id}',
-                            headers={'Authorization': 'Bearer ' + self.get_token()}, json=data)
+        with allure.step(f'Обновление информации о пользователе {profile_id}'):
+            response = requests.put(f'{self.stepik_url}/api/profiles/{profile_id}',
+                                headers={'Authorization': 'Bearer ' + self.get_token()}, json=data)
 
-        response_logging(response)
-        response_attaching(response)
+            # response_logging(response)
+            # response_attaching(response)
 
-        return response
+            return response
 
 
 stepik_api = StepikApi()
