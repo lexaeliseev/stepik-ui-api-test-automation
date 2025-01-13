@@ -79,7 +79,7 @@
    ```
 5. **Для генерации отчета о прохождении тестов выполните команду:**
    ```sh
-   allure serve .\allure-results
+   allure serve allure-results
 
 <h3>
   <img src="source/Jenkins.svg" width="30" height="30" style="vertical-align: middle;">
