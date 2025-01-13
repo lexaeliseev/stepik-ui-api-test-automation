@@ -51,13 +51,12 @@
 1. **Склонируйте репозиторий:**
    ```sh
    git clone <git@github.com:lexaeliseev/stepik-ui-api-test-automation.git>
-2. **Установите зависимости:**
+2. **Откройте проект в PyCharm и настройте интерпретатор.**
+3. **Установите необходимые библиотеки:**
    ```
-   python -m venv .venv
-   source .venv/bin/activate
    pip install -r requirements.txt
    ```
-3. **Создайте файл .env по образцу в папке проекта:**
+4. **Создайте файл .env по образцу в папке проекта:**
    ```python
    URL = "https://stepik.org"
    
@@ -72,12 +71,12 @@
    CLIENT_SECRET = ''
    ```
    
-4. **Запустите тесты в PyCharm или в командной строке:**
+5. **Запустите тесты в PyCharm или в командной строке:**
    ```
    pytest . --browser=[firefox|chrome]
    # Укажите браузер: chrome (по умолчанию) или firefox
    ```
-5. **Для генерации отчета о прохождении тестов выполните команду:**
+6. **Для генерации отчета о прохождении тестов выполните команду:**
    ```sh
    allure serve allure-results
 
