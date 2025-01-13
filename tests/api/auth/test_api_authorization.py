@@ -30,7 +30,7 @@ def test_auth_success():
 @allure.story('Авторизация')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
-@allure.title('Вход в систему с неверными данными')
+@allure.title('Попытка входа в систему с неверными данными')
 def test_auth_failure():
     result = stepik_api.auth_oauth2(client_id, 'bad_client_secret')
 

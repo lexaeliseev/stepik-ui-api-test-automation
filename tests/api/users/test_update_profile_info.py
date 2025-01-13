@@ -13,7 +13,7 @@ from tests.api.data.user_data import user_data
 @allure.story('Профиль пользователя')
 @allure.severity(allure.severity_level.CRITICAL)
 @allure.tag("Smoke")
-@allure.title('Обновление информации профиля пользователя')
+@allure.title('Попытка обновления информации профиля пользователя')
 def test_update_profile_info_success(reset_profile):
     profile_id = 1002719529
     first_name = 'Update'
