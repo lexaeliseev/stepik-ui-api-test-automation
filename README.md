@@ -113,6 +113,8 @@
 
 <img src="source/auth_failure.gif" width="600">
 
+---
+
 <h3>
   <img src="source/Allure_TestOps.svg" width="30" height="30" style="vertical-align: middle;"> Интеграция с Allure TestOps
 </h3>
@@ -120,10 +122,14 @@
 
 **При выполнении автотестов к результатам тестов прикрепляются артефакты, например логи, скриншоты и т.д.**
 
+---
+
 <h3>
   <img src="source/Jira.svg" width="30" height="30" style="vertical-align: middle;"> Интеграция с Jira
 </h3>
 <img src="source/jira_report.jpg" width="600">
+
+---
 
 <h3>
   <img src="source/Telegram.svg" width="30" height="30" style="vertical-align: middle;"> Оповещения в Telegram
