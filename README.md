@@ -109,7 +109,8 @@
 
 <img src="source/allure_report_behaviors.jpg" width="600">
 
-**Пример видеозаписи прохождения теста**
+**Пример видеозаписи теста (попытка авторизации с невалидными данными)**
+
 
 <img src="source/auth_failure.gif" width="600">
 
