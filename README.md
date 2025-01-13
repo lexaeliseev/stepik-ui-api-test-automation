@@ -108,9 +108,7 @@
 <img src="source/allure_report_behaviors.jpg" width="600">
 
 **Пример видеозаписи прохождения теста**
-
-https://github.com/user-attachments/assets/f1cecb9e-1c26-42e5-b294-ba1a9fbc78cc
-
+https://github.com/user-attachments/assets/da85dd64-6528-4824-972c-a8c2d65c124e
 <h3>
   <img src="source/Allure_TestOps.svg" width="30" height="30" style="vertical-align: middle;"> Интеграция с Allure TestOps
 </h3>
