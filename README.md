@@ -81,9 +81,38 @@
    ```sh
    allure serve .\allure-results
 
-
 <h3>
   <img src="source/Jenkins.svg" width="30" height="30" style="vertical-align: middle;">
   Запуск проекта в <a href="https://jenkins.autotests.cloud/job/C16-lexaeliseev-final/">Jenkins</a>
 </h3>
+
+1. **Перейдите в раздел "Build with Parameters"**.
+2. **Укажите необходимые параметры:**
+   - **Адрес удаленного сервера**: Введите URL-адрес удаленного сервера.
+   - **Выбор набора тестов**: Укажите, какие тесты должны быть запущены.
+   - **Версия браузера**: Выберите версию браузера для тестирования.
+   - **Браузер**: Укажите, какой браузер использовать (Chrome или Firefox).
+   - **Комментарий для оповещения в Telegram**: Добавьте комментарий, который будет отправлен в Telegram для оповещения о статусе тестов.
+3. **Нажмите кнопку "Build" после заполнения всех параметров**.
+<img src="source/build_with_parameters.jpg" width="600">
+---
+<h3>
+  <img src="source/Allure_Report.svg" width="30" height="30" style="vertical-align: middle;"> Интеграция с Allure Report
+</h3>
+
+**Результаты тестирования доступны в Allure-отчете.**
+
+<img src="source/allure_report_home.jpg" width="600">
+
+**При выполнении автотестов к результатам тестов прикрепляются артефакты, например логи, скриншоты и т.д.**
+<img src="source/allure_report_behaviors.jpg" width="600">
+
+**Пример видеозаписи прохождения теста**
+https://github.com/user-attachments/assets/da85dd64-6528-4824-972c-a8c2d65c124e
+<h3>
+  <img src="source/Allure_TestOps.svg" width="30" height="30" style="vertical-align: middle;"> Интеграция с Allure TestOps
+</h3>
+<img src="source/testops_report.jpg" width="600">
+
+
 
