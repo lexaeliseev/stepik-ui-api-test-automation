@@ -96,6 +96,8 @@
 3. **Нажмите кнопку "Build" после заполнения всех параметров**.
 <img src="source/build_with_parameters.jpg" width="600">
 
+---
+
 <h3>
   <img src="source/Allure_Report.svg" width="30" height="30" style="vertical-align: middle;"> Интеграция с Allure Report
 </h3>
