@@ -108,7 +108,14 @@
 <img src="source/allure_report_behaviors.jpg" width="600">
 
 **Пример видеозаписи прохождения теста**
-https://github.com/user-attachments/assets/f1cecb9e-1c26-42e5-b294-ba1a9fbc78cc
+
+<video width="600" controls>
+  <source src="source/auth_failure.mp4" type="video/mp4">
+  Ваш браузер не поддерживает тег video.
+</video>
+
+
+
 <h3>
   <img src="source/Allure_TestOps.svg" width="30" height="30" style="vertical-align: middle;"> Интеграция с Allure TestOps
 </h3>
