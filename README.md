@@ -82,5 +82,8 @@
    allure serve .\allure-results
 
 
-### <img src="source/Jenkins.svg" width="30" height="30" style="vertical-align: middle;"> Запуск проекта в [Jenkins](https://jenkins.autotests.cloud/job/C16-lexaeliseev-final/)
+<h3>
+  <img src="source/Jenkins.svg" width="30" height="30" style="vertical-align: middle;">
+  Запуск проекта в <a href="https://jenkins.autotests.cloud/job/C16-lexaeliseev-final/">Jenkins</a>
+</h3>
 
