@@ -5,7 +5,7 @@
 
 ### Используемый стек технологий и инструментов
 
-<img src="source/python.png" width="50" height="25"><img src="source/pycharm.png" width="33.5" height="26.5"><img src="source/github.png" width="50" height="26.5"><img src="source/pytest.png" width="33.5" height="26.5"><img src="source/Selenide.png" width="33.5" height="26.5"><img src="source/Selene.png" width="33.5" height="26.5"><img src="source/Allure_Report.svg" width="33.5" height="26.5"><img src="source/Allure_TestOps.svg" width="33.5" height="26.5"><img src="source/Jenkins.svg" width="33.5" height="26.5"><img src="source/Jira.svg" width="33.5" height="26.5"><img src="source/Telegram.svg" width="33.5" height="26.5">
+<img src="source/python.png" width="40" height="32"><img src="source/pycharm.png" width="33.5" height="26.5"><img src="source/github.png" width="50" height="26.5"><img src="source/pytest.png" width="33.5" height="26.5"><img src="source/Selenide.png" width="33.5" height="26.5"><img src="source/Selene.png" width="33.5" height="26.5"><img src="source/Allure_Report.svg" width="33.5" height="26.5"><img src="source/Allure_TestOps.svg" width="33.5" height="26.5"><img src="source/Jenkins.svg" width="33.5" height="26.5"><img src="source/Jira.svg" width="33.5" height="26.5"><img src="source/Telegram.svg" width="33.5" height="26.5">
 ---
 ## Реализованные автотесты
 
